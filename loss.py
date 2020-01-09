@@ -38,8 +38,8 @@ class GANLoss(nn.Module):
                     loss += self.loss(pred, target_tensor.to(self.device))
                 return loss
             else:
-                target_tensor = self.get_target_tensor(input[-1], target_is_real)
-                return self.loss(input[-1], target_tensor.to(self.device))
+                target_tensor = self.get_target_tensor(prediction[-1], target_is_real)
+                return self.loss(prediction[-1], target_tensor.to(self.device))
             
         elif self.gan_mode == 'wgangp':
             if self.gan_mode == 'wgangp':
